@@ -187,6 +187,8 @@ namespace Tests.NAnt.Core {
                 </project>";
 
             XmlDocument configDoc = new XmlDocument ();
+            var ress = System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceNames();
+            System.Console.WriteLine(string.Join(",", ress));
             using (Stream cs = Assembly.GetExecutingAssembly().GetManifestResourceStream("NAnt.Core.Tests.Framework.config")) {
                 configDoc.Load (cs);
             }
